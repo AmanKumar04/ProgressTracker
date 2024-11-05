@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Task Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Tracker</h1>
+        <label>
+            Dark Mode
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        </label>
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a new task" />
+            <select id="categoryInput">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Fitness">Fitness</option>
+            </select>
+            <select id="priorityInput">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="filters">
+            <button onclick="sortTasks('priority')">Sort by Priority</button>
+            <button onclick="sortTasks('completed')">Sort by Status</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div id="progress">
+            <p>Progress: <span id="progressPercent">0%</span></p>
+            <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
